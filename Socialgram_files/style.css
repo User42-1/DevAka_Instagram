@@ -1,0 +1,550 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif !important;
+  margin: 0;
+  max-width: max-content;
+}
+
+.grey-text {
+  color: rgba(0, 0, 0, 0.493);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-left: 2vw;
+  font-size: 20px;
+  box-shadow: -15px 1px 15px 5px #000000;
+  padding-right: 20px;
+}
+
+header a{
+  text-decoration: none;
+}
+
+.header-div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  transition: all 170ms ease-in-out;
+  background-color: #00000000;
+
+}
+
+.insta-icon{
+  display: none;
+}
+
+header h1 {
+  padding-right: 10px;
+  font-family: "Pacifico";
+  font-style: italic;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    135deg,
+    #5700ff 0%,
+    #ff009a 30%,
+    #ffd100 100%
+  );
+  background-size: cover;
+  margin-bottom: 60px;
+}
+
+.header-div a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  background-color: #00000000;
+}
+
+.header-div:hover {
+  background-color: #e7e7e7;
+  border-radius: 20px;
+  transition: all 120ms ease-in-out;
+  padding: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+
+.header-div img {
+  width: 25px;
+  margin-right: 5px;
+}
+
+nav {
+  position: absolute;
+  left: 2vw;
+  bottom: 2vh;
+  display: flex;
+  align-items: center;
+  /* margin-left: 2vw; */
+  width: 200px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #000000;
+  background-color: #00000000;
+  transition: all 170ms ease-in-out;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+nav:hover {
+  background-color: #e7e7e7;
+  transition: all 170ms ease-in-out;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+}
+
+nav a{
+  color: #000000;
+}
+
+nav img {
+  width: 35px;
+  margin-right: 20px;
+}
+
+.mid-content {
+  width: fit-content;
+  position: relative;
+  left: 28vw;
+  top: 5vh;
+  height: fit-content;
+}
+
+.right-content {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding-top: 5vh;
+  width: 20pc;
+  padding-right: 10vw;
+  padding-left: 20px;
+  max-width: 30vw;
+  box-shadow: 15px 1px 15px 5px #000000;
+}
+
+.user h4 {
+  margin: 3px 0 3px 15px;
+}
+
+.imprint a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.493);
+}
+
+#user-icon-top-right {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.user-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 400px;
+}
+
+.user-block a {
+  text-decoration: none;
+  color: rgb(0, 110, 255);
+  font-weight: bold;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.proposals {
+  min-width: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal-profile{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.proposal-profile a h4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  height: fit-content;
+  /* margin-bottom: 10px; */
+}
+
+.proposal-profile a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(0, 110, 255);
+  margin-bottom: 0;
+}
+
+.proposals a img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.follow {
+  text-decoration: none;
+  color: rgb(0, 110, 255);
+  font-weight: bold;
+}
+
+
+.imprint {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.imprint a {
+  margin-left: 5px;
+}
+
+.imprint a:hover {
+  text-decoration: underline;
+}
+
+#feed {
+  max-width: fit-content;
+  margin-bottom: 50px;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+  max-width: 30vw;
+  border-bottom: 2px solid rgb(216, 216, 216);
+  padding-bottom: 30px;
+}
+
+.person p{
+  font-weight: bold;
+}
+
+.person > img {
+  width: 30vw;
+  border-radius: 5px;
+}
+
+.below-img {
+  /* width: fit-content; */
+  padding: 10px 35px 5px 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+
+}
+
+.below-img img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.below-img-left img{
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.small-profile-img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.profile-header a {
+  text-decoration: none;
+  color: rgb(112, 112, 112);
+}
+
+.comment{
+  max-width: fit-content;
+  margin: 10px 0;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  
+}
+
+.input-and-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30vw;
+  }
+
+.input-field{
+  border: none;
+  /* margin-right: 15vw; */
+}
+
+.send-button{
+  border: 0px outset rgb(173, 173, 173);
+  background-color: transparent;
+  color: rgb(0, 110, 255);
+  font-weight: bold;
+  cursor: pointer;
+
+  
+}
+
+/* carousel */
+
+#profile-wrapper {
+  width: 95%;
+  max-width: 525px;
+  position: relative;
+}
+
+#profile-carousel {
+  width: 30vw;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+#profile-carousel::-webkit-scrollbar {
+  height: 0;
+}
+
+#prev,
+#next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: white;
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+#prev {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+#next {
+  top: 50%;
+  right: -10%;
+  transform: translate(-50%, -50%);
+}
+
+#profile-content {
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+}
+
+.item-img {
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: -moz-linear-gradient(
+    -45deg,
+    #5700ff 0%,
+    #ff009a 30%,
+    #ffd100 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    #5700ff 0%,
+    #ff009a 30%,
+    #ffd100 100%
+  );
+  background: linear-gradient(135deg, #5700ff 0%, #ff009a 30%, #ffd100 100%);
+}
+
+/* end carousel */
+
+
+@media (max-width: 1500px){
+
+  .mid-content {
+    left: 24vw;
+  }
+}
+
+@media (max-width: 1350px){
+
+  header h1{
+    display: none;
+  }
+
+  header a{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 90px;
+  }
+
+  .insta-icon{
+    display: block;
+    width: 40px;
+  }
+
+  header{
+    width: 50px;
+  }
+
+  .header-div{
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .header-div img{
+    margin-right: 0;
+  }
+
+  .header-div a{
+    display: none;
+  }
+
+nav a{
+  display: none;
+}
+
+.mid-content{
+  position: absolute;
+  left: 20vw;
+}
+}
+
+@media (max-width: 1120px){
+  .right-content{
+    display: none;
+  }
+
+  .mid-profiles{
+    width: 350px;
+    margin: 0px!important;
+  }
+
+  .mid-content{
+    position: absolute;
+    left: 20vw;
+    width: 70vw;
+  }
+
+  .person {
+    max-width: 70vw;
+  }
+
+  .person > img{
+    width: 70vw;
+  }
+
+  .input-and-button {
+   width: 70vw;
+}
+
+.below-img {
+  width: 70vw;
+}
+
+#profile-wrapper {
+  max-width: 70vw;
+}
+
+#profile-carousel {
+  width: 70vw;
+}
+}
+
+@media (max-width: 600px){
+
+  .mid-profiles{
+    width: 350px;
+    margin: 0px!important;
+  }
+
+  .mid-content{
+    position: absolute;
+    left: 20vw;
+    width: 70vw;
+  }
+
+  .person {
+    max-width: 70vw;
+  }
+
+  .person > img{
+    width: 70vw;
+  }
+
+  .input-and-button {
+   width: 70vw;
+}
+
+.below-img {
+  width: 70vw;
+}
+}
+
+@media (max-width: 430px){
+
+  header {
+    padding: 0;
+  }
+
+  nav{
+    left: 0px;
+  }
+
+  nav img{
+    width: 25px;
+  }
+
+}
