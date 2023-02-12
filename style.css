@@ -22,7 +22,7 @@ body {
     align-items: center;
     position: sticky;
     top: 0px;
-    border: 1px solid black;
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%)
 }
 
 .content_container {
@@ -43,8 +43,9 @@ body {
     height: 100vh;
     position: sticky;
     top: 0px;
-    border: 1px solid black;
-
+    /*     border: 1px solid black;
+ */
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%)
 }
 
 /***** .left_container *****/
@@ -127,8 +128,10 @@ body {
     width: 500px;
     min-height: 600px;
     margin-bottom: 32px;
-    border: 1px solid black;
+    /*     border: 1px solid black;
+ */
     border-radius: 10px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
 }
 
 .author_container {
@@ -172,6 +175,8 @@ body {
 
 .logos_in_row_container :hover {
     cursor: pointer;
+    background-color: rgb(184, 182, 182);
+    border-radius: 50%;
 }
 
 .banner {
@@ -190,9 +195,24 @@ body {
 }
 
 .input {
-    padding-left: 16px;
-    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 16px;
+    align-items: baseline;
 }
+
+input {
+    margin: 0px 16px 16px 16px;
+    border: 0;
+    width: 300px;
+    /*     outline: 0;
+ */
+}
+
+/* input:focus {
+    outline: none !important;
+} */
+
 
 /***** .@media *****/
 

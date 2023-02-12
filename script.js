@@ -52,7 +52,7 @@ function show() {
 
                 <div class="commentArray" id="commentArray${i}"></div>
 
-                <div class="input"><input id="input${i}" type="text" placeholder="Kommentieren..."> <button onclick="sendComment(${i})">Senden</button></div>
+                <div class="input"><input id="input${i}" type="text" placeholder="Kommentieren..."><button onclick="sendComment(${i})">Senden</button></div>
             </div>
         `;
 
@@ -70,9 +70,15 @@ function show() {
 }
 
 function sendComment(i) {
-    let input = document.getElementById(`input${i}`);
-    posts[i]['comments'].push(input.value);
-    show();
+        let input = document.getElementById(`input${i}`);
+        if (input.value.length == 0) { 
+            input.style.background = 'Silver';
+/*             alert("Bitte Kommentar einfügen");  	
+ */            return false; 
+        } else {
+        posts[i]['comments'].push(input.value);
+    }
+        show();
 }
 
 function counterLikes(i) {
@@ -87,6 +93,7 @@ function counterLikes(i) {
         counterToggle = '1';
     } else {
         document.getElementById(`heart${i}`).style.backgroundColor = 'transparent';
+        document.getElementById(`heart${i}`).style.borderRadius = '50%';
         let string_number = document.getElementById(`numberLikes${i}`).innerHTML;
         let number = parseInt(string_number);
         number--;
