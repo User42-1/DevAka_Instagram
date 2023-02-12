@@ -34,7 +34,23 @@ function show() {
     for (let i=0; i<posts.length; i++) {
         const post = posts[i];
 
-        content.innerHTML += `
+        content.innerHTML += generatePost(i,post);
+
+        let commentArray = document.getElementById(`commentArray${i}`);
+        commentArray.innerHTML = '';
+        
+        for (let j = 0; j < post['comments'].length; j++) {
+            const comment = post['comments'][j];
+            commentArray.innerHTML += `
+                <div>${comment}</div>
+            `;
+        }
+
+    }
+}
+
+function generatePost(i,post) {
+    return`
             <div class="post_container">
                 <div class="author"><img class="authorImage" src="${post['author']}"></div>
                 <div><img class="image" src="${post['image']}"></div>
@@ -54,19 +70,7 @@ function show() {
 
                 <div class="input"><input id="input${i}" type="text" placeholder="Kommentieren..."><button onclick="sendComment(${i})">Senden</button></div>
             </div>
-        `;
-
-        let commentArray = document.getElementById(`commentArray${i}`);
-        commentArray.innerHTML = '';
-        
-        for (let j = 0; j < post['comments'].length; j++) {
-            const comment = post['comments'][j];
-            commentArray.innerHTML += `
-                <div>${comment}</div>
-            `;
-        }
-
-    }
+        `
 }
 
 function sendComment(i) {

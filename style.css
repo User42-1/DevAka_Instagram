@@ -22,7 +22,7 @@ body {
     align-items: center;
     position: sticky;
     top: 0px;
-    box-shadow: 0 0 5px rgb(0 0 0 / 10%)
+    box-shadow: 0 0 5px rgb(0 0 0 / 40%)
 }
 
 .content_container {
@@ -43,9 +43,7 @@ body {
     height: 100vh;
     position: sticky;
     top: 0px;
-    /*     border: 1px solid black;
- */
-    box-shadow: 0 0 5px rgb(0 0 0 / 10%)
+    box-shadow: 0 0 5px rgb(0 0 0 / 40%)
 }
 
 /***** .left_container *****/
@@ -131,7 +129,7 @@ body {
     /*     border: 1px solid black;
  */
     border-radius: 10px;
-    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    box-shadow: 0 0 5px rgb(0 0 0 / 40%);
 }
 
 .author_container {
@@ -204,9 +202,7 @@ body {
 input {
     margin: 0px 16px 16px 16px;
     border: 0;
-    width: 300px;
-    /*     outline: 0;
- */
+    width: 350px;
 }
 
 /* input:focus {
@@ -240,6 +236,6 @@ input {
 
 @media (max-width: 400px) {
     .post_container {
-        width: 275px;
+        width: 250px;
     }
 }
