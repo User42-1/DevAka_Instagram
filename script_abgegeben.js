@@ -33,25 +33,21 @@ function show() {
 
     for (let i=0; i<posts.length; i++) {
         const post = posts[i];
-        content.innerHTML += generateHTMLPost(i,post);
+
+        content.innerHTML += generatePost(i,post);
+
         let commentArray = document.getElementById(`commentArray${i}`);
         commentArray.innerHTML = '';
         
-        showPostComments(i,post);
+        for (let j = 0; j < post['comments'].length; j++) {
+            const comment = post['comments'][j];
+            commentArray.innerHTML += generateComment(j,comment);
+        }
+
     }
 }
 
-function showPostComments(i,post) {
-    let commentArray = document.getElementById(`commentArray${i}`);
-    commentArray.innerHTML = '';
-    
-    for (let j = 0; j < post['comments'].length; j++) {
-        const comment = post['comments'][j];
-        commentArray.innerHTML += generateHTMLComment(comment);
-    }
-}
-
-function generateHTMLPost(i,post) {
+function generatePost(i,post) {
     return`
             <div class="post_container">
                 <div class="author"><img class="authorImage" src="${post['author']}"></div>
@@ -75,7 +71,7 @@ function generateHTMLPost(i,post) {
         `
 }
 
-function generateHTMLComment(comment) {
+function generateComment(j,comment) {
     return`
         <div>${comment}</div>
     `;
@@ -89,10 +85,8 @@ function sendComment(i) {
                 return false; 
         } else {
         posts[i]['comments'].push(input.value);
-        input.value = '';
-        }
-        let post = posts[i];
-        showPostComments(i,post);
+    }
+        show();
 }
 
 function counterLikes(i) {
