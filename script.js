@@ -24,7 +24,7 @@ let posts = [{
     }
 ];
 
-let counterToggle = '0';
+let counterToggle = false;
 
 
 function show() {
@@ -54,13 +54,23 @@ function showPostComments(i,post) {
 function generateHTMLPost(i,post) {
     return`
             <div class="post_container">
-                <div class="author"><img class="authorImage" src="${post['author']}"></div>
-                <div><img class="image" src="${post['image']}"></div>
+                <div class="author">
+                    <img class="authorImage" src="${post['author']}">
+                </div>
+                <div>
+                    <img class="image" src="${post['image']}">
+                </div>
                 <div class="middle_logo_container">
                     <div class="heart_row" id="heart_row">
-                        <div class="logos_in_row_container"><img onclick="counterLikes(${i})" class="logos_in_row" id="heart${i}" src="logos/heart-empty.png" alt=""></div>
-                        <div class="logos_in_row_container" ><img class="logos_in_row" src="logos/bubble.png" alt=""></div>
-                        <div class="logos_in_row_container" ><img class="logos_in_row" src="logos/paper-icon.png" alt=""></div>
+                        <div class="logos_in_row_container">
+                            <img onclick="counterLikes(${i})" class="logos_in_row" id="heart${i}" src="logos/heart-empty.png" alt="">
+                        </div>
+                        <div class="logos_in_row_container" >
+                            <img class="logos_in_row" src="logos/bubble.png" alt="">
+                        </div>
+                        <div class="logos_in_row_container" >
+                            <img class="logos_in_row" src="logos/paper-icon.png" alt="">
+                        </div>
                     </div>
                     <div>
                         <div class="banner"><img class="logo" src="logos/banner.png" alt=""></div>
@@ -70,7 +80,10 @@ function generateHTMLPost(i,post) {
 
                 <div class="commentArray" id="commentArray${i}"></div>
 
-                <div class="input"><input id="input${i}" type="text" placeholder="Kommentieren..."><button onclick="sendComment(${i})">Senden</button></div>
+                <div class="input">
+                    <input id="input${i}" type="text" placeholder="Kommentieren...">
+                    <button onclick="sendComment(${i})">OK</button>
+                </div>
             </div>
         `
 }
@@ -84,8 +97,8 @@ function generateHTMLComment(comment) {
 function sendComment(i) {
         let input = document.getElementById(`input${i}`);
         if (input.value.length == 0) { 
-            input.style.background = 'Silver';
-            alert("Bitte Kommentar einfügen");  	
+/*             input.style.background = 'Silver';
+ */            alert("Bitte Kommentar einfügen");  	
                 return false; 
         } else {
         posts[i]['comments'].push(input.value);
@@ -96,24 +109,19 @@ function sendComment(i) {
 }
 
 function counterLikes(i) {
-    if (counterToggle == '0') {
+    if (counterToggle == false) {
+        posts[i]['likes']++;
+        let likes = posts[i]['likes'];
+        document.getElementById(`numberLikes${i}`).innerHTML = `${likes}`;
         document.getElementById(`heart${i}`).style.backgroundColor = 'red';
         document.getElementById(`heart${i}`).style.borderRadius = '50%';
-        let string_number = document.getElementById(`numberLikes${i}`).innerHTML;
-        let number = parseInt(string_number);
-        number++;
-        string_number = number.toString()
-        document.getElementById(`numberLikes${i}`).innerHTML = `${string_number}`;
-        counterToggle = '1';
+        counterToggle = true;
     } else {
+        posts[i]['likes']--;
+        let likes = posts[i]['likes'];
+        document.getElementById(`numberLikes${i}`).innerHTML = `${likes}`;
         document.getElementById(`heart${i}`).style.backgroundColor = 'transparent';
         document.getElementById(`heart${i}`).style.borderRadius = '50%';
-        let string_number = document.getElementById(`numberLikes${i}`).innerHTML;
-        let number = parseInt(string_number);
-        number--;
-        string_number = number.toString()
-        document.getElementById(`numberLikes${i}`).innerHTML = `${string_number}`;
-        counterToggle = '0';
+        counterToggle = false;
         }
-   
 }

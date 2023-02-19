@@ -8,13 +8,13 @@ let posts = [{
     'author':'img/imgs1.jpg',
     'image':'img/img1.jpg',
     'likes':34,
-    'comments':['Kommentar']
+    'comments':['Vegan ist besser', 'Lieber Steak als Salat']
     },
     {
     'author':'img/imgs2.jpg',
     'image':'img/img2.jpg',
     'likes':543,
-    'comments':['Kommentar']
+    'comments':['Wo ist das Ticket erhältlich?']
     },
     {
     'author':'img/imgs3.jpg',
@@ -33,23 +33,25 @@ function show() {
 
     for (let i=0; i<posts.length; i++) {
         const post = posts[i];
-
-        content.innerHTML += generatePost(i,post);
-
+        content.innerHTML += generateHTMLPost(i,post);
         let commentArray = document.getElementById(`commentArray${i}`);
         commentArray.innerHTML = '';
         
-        for (let j = 0; j < post['comments'].length; j++) {
-            const comment = post['comments'][j];
-            commentArray.innerHTML += `
-                <div>${comment}</div>
-            `;
-        }
-
+        showPostComments(i,post);
     }
 }
 
-function generatePost(i,post) {
+function showPostComments(i,post) {
+    let commentArray = document.getElementById(`commentArray${i}`);
+    commentArray.innerHTML = '';
+    
+    for (let j = 0; j < post['comments'].length; j++) {
+        const comment = post['comments'][j];
+        commentArray.innerHTML += generateHTMLComment(comment);
+    }
+}
+
+function generateHTMLPost(i,post) {
     return`
             <div class="post_container">
                 <div class="author"><img class="authorImage" src="${post['author']}"></div>
@@ -73,16 +75,24 @@ function generatePost(i,post) {
         `
 }
 
+function generateHTMLComment(comment) {
+    return`
+        <div>${comment}</div>
+    `;
+}
+
 function sendComment(i) {
         let input = document.getElementById(`input${i}`);
         if (input.value.length == 0) { 
             input.style.background = 'Silver';
-/*             alert("Bitte Kommentar einfügen");  	
- */            return false; 
+            alert("Bitte Kommentar einfügen");  	
+                return false; 
         } else {
         posts[i]['comments'].push(input.value);
-    }
-        show();
+        input.value = '';
+        }
+        let post = posts[i];
+        showPostComments(i,post);
 }
 
 function counterLikes(i) {

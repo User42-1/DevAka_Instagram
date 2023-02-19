@@ -17,6 +17,7 @@ body {
     background-color: rgb(249, 252, 251);
     width: 10%;
     height: 100vh;
+    padding: 0 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -202,7 +203,8 @@ body {
 input {
     margin: 0px 16px 16px 16px;
     border: 0;
-    width: 350px;
+    outline: none;
+    width: 25em;
 }
 
 /* input:focus {
@@ -218,7 +220,7 @@ input {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .right_container {
         display: none;
     }
@@ -236,6 +238,6 @@ input {
 
 @media (max-width: 400px) {
     .post_container {
-        width: 250px;
+        width: 260px;
     }
 }
